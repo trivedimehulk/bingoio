@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speech Fill Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* Left Side: Bingo Demo */
+        .left-panel {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1;
+            max-width: 48%;
+        }
+
+        .left-panel h2 {
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #status {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Right Side: Instruction Manual */
+        .right-panel {
+            background-color: #fefefe;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1;
+            max-width: 48%;
+        }
+
+        .right-panel h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+
+        .step {
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .step-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+    <!-- Include the Bingo Button CSS -->
+    <link rel="stylesheet" href="bingoButton.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel: Bingo Demo -->
+        <div class="left-panel">
+            <h2>Speech Fill Form</h2>
+            <div class="rendered-form">
+                <label for="text-1731969609403">First Name</label>
+                <input type="text" class="form-control" id="text-1731969609403">
+
+                <label for="text-111">Last Name</label>
+                <input type="text" class="form-control" id="text-111">
+
+                <label for="text-dob">Date of Birth</label>
+                <input type="text" class="form-control" id="text-dob">
+            </div>
+            <!-- <div id="status">Click the button and start speaking. Say "Bingo" to stop.</div> -->
+            <br>
+            <u>Example speech prompts</u><br><br>
+            First Name <b>is</b> John<br>
+            Last Name <b>is</b> Hoffman
+        </div>
+
+        <!-- Right Panel: Instruction Manual -->
+        <div class="right-panel">
+            <h3>How to Implement Speech Fill</h3>
+			<div class="step">
+                <span class="step-number">Step 1:</span>
+                <p class="step-description">Add bingo button at the bottom of your HTML. E.g.</p><Br>
+                <pre class="highlight">&lt;button id="bingoButton"&gt;Button&lt;/button&gt;</pre>
+            </div>
+			<div class="step">
+                <span class="step-number">Step 2:</span>
+                <p class="step-description">Add bingo style in HEAD section of your HTML. E.g.</p><Br>
+                <pre class="highlight">&lt;link rel="stylesheet" href="bingoButton.css"&gt;</pre>
+            </div>
+            <div class="step">
+                <span class="step-number">Step 3:</span>
+                <p class="step-description">Create and inject <span class="highlight">fieldMap.js</span> like below in your HTML file at the end preferred.</p><p class="note">[Make sure to read our instruction manual to understand how to create an easy field map.]</p><Br>
+                <pre class="highlight">&lt;script src="fieldMap.js"&gt;&lt;/script&gt;</pre>
+            </div>
+            <div class="step">
+                <span class="step-number">Step 4:</span>
+                <p class="step-description">Include the Bingo magic JavaScript file at the end preferred.</p><Br>
+                <pre class="highlight">&lt;script src="magic.js"&gt;&lt;/script&gt;</pre>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Floating Bingo Button -->
+    <button id="bingoButton">Bingo</button>
+    <!-- Include the Bingo Button JavaScript -->
+    <script src="bingoButton.js"></script>
+    <!-- Include your field map JavaScript File -->
+    <script src="fieldMap.js"></script>
+    <!-- External JavaScript File -->
+    <script src="magic.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Wiz-A-Thon</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Include the Bingo Button CSS -->
+    <link rel="stylesheet" href="bingoButton.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a class="navbar-brand" href="">Hospital Predicts Medical Events</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="">Contact</a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="">Terms & Conditions</a>
+            </li>
+
+          </ul>
+        </div>
+    </nav>
+  <center>
+    <div class="header">
+      Welcome To Hospital Predicts Medical Events.
+    </div>
+  </center>  
+ <div class="login">
+  <h1>Enter Paitent Detalis</h1>
+
+  <p> </p>
+  <p> </p>
+
+  <div class="container">
+      <form>
+          <div class="form-row">
+              <div class="col-md-4 mb-3">
+                  <label for="validationServer013">First name</label>
+                  <input type="text" class="form-control is-valid" id="validationServer013" placeholder="First name" required>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                  <label for="validationServer023">Last name</label>
+                  <input type="text" class="form-control is-valid" id="validationServer023" placeholder="Last name" required>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+                  <label for="validationServerUsername33">Email</label>
+                  <div class="input-group">
+                      <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend33">@</span>
+                      </div>
+                      <input type="email" class="form-control is-valid" id="validationServerUsername33" placeholder="Email"
+                      aria-describedby="inputGroupPrepend33" required>
+                      <div class="invalid-feedback">
+                      Please choose a username.
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      <div class="form-row">
+          <div class="col-md-6 mb-3">
+              <label for="validationServer033">City</label>
+              <input type="text" class="form-control is-valid" id="validationServer033" placeholder="City" required>
+              <div class="invalid-feedback">
+                  Please provide a valid city.
+              </div>
+          </div>
+          <div class="col-md-3 mb-3">
+              <label for="validationServer043">State</label>
+              <input type="text" class="form-control is-valid" id="validationServer043" placeholder="State" required>
+              <div class="invalid-feedback">
+                  Please provide a valid state.
+              </div>
+          </div>
+          <div class="col-md-3 mb-3">
+              <label for="validationServer053">Zip</label>
+              <input type="text" class="form-control is-valid" id="validationServer053" placeholder="Zip" required>
+              <div class="invalid-feedback">
+                  Please provide a valid zip.
+              </div>
+          </div>
+      </div>
+    </form>
+      <form action="{{ url_for('predict')}}"method="post">
+      <div class="form-row">
+          <div class="col-md-6 mb-3">
+              <label for="validationServer033">Gender</label>
+              <input type="text" class="form-control is-valid" name="gender" id="validationServer033" placeholder="Gender" required>
+              <div class="valid-feedback">
+                  Please provide valid Gender.
+              </div>
+          </div>
+          <div class="col-md-3 mb-3">
+              <label for="validationServer043">Age</label>
+              <input type="text" class="form-control is-valid" name="age" id="validationServer043" placeholder="Age" required>
+              <div class="valid-feedback">
+                  Please provide valid Age.
+              </div>
+          </div>
+          <div class="col-md-3 mb-3">
+              <label for="validationServer053">Heart Rate</label>
+              <input type="text" class="form-control is-valid" name="Heart_rate" id="validationServer053" placeholder="Heart Rate" required>
+              <div class="valid-feedback">
+                  Please provide valid Heart Rate.
+              </div>
+          </div>
+      </div>
+
+      <div class="form-row">
+          <div class="col-md-6 mb-3">
+              <label for="validationServer013">Bloop pressure</label>
+              <input type="text" class="form-control is-valid" name="bp" id="validationServer013" placeholder="Blood pressure" required>
+          </div>
+      
+          <div class="col-md-6 mb-3">
+              <label for="validationServer023">Threat Level</label>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button">Select</button>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect03" name="level threat" aria-label="Example select with button addon">
+                    <option selected>Choose...</option>
+                    <option value="0">Low</option>
+                    <option value="1">High</option>
+                  </select>
+                </div>
+          </div>
+      </div>
+
+      <div class="jumbotron">
+          <h1 class="display-4">Disease</h1>
+          <hr class="my-4">
+          <div class="form-row">
+              <div class="col-md-4 mb-3">
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Dengue</label>
+                      </div>
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                      </select>
+                    </div>
+              </div>
+          
+              <div class="col-md-4 mb-3" style=" 
+                                              padding-left: 20px; 
+                                              padding-right: 20px
+                                              ">
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Malaria</label>
+                      </div>
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                      </select>
+                    </div>
+              </div>
+          
+              <div class="col-md-4 mb-3">
+  
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Typhoid</label>
+                      </div>
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                      </select>
+                    </div>
+              </div>
+          </div>
+        </div>
+
+      <div class="form-group">
+          <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input is-valid" id="invalidCheck33" required>
+              <label class="custom-control-label" for="invalidCheck33">Agree to terms and conditions</label>
+              <div class="valid-feedback">
+                  You must agree before submitting.
+              </div>
+          </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>
+  </div>
+ </div>
+<!-- Floating Bingo Button -->
+    <button id="bingoButton">Bingo</button>
+<!-- Include your field map JavaScript File -->
+    <script src="fieldMapSampl.js"></script>
+    <!-- External JavaScript File -->
+    <script src="magic.js"></script>
+
+</body>
+</html>
