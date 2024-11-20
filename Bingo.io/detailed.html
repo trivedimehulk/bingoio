@@ -4,20 +4,6 @@
     <title>Speech Fill Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .bottom-link {
-            
-            font-size: 16px;
-        }
-
-        .bottom-link a {
-            color: #4285f4;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .bottom-link a:hover {
-            text-decoration: underline;
-        }
         /* Basic reset */
         * {
             box-sizing: border-box;
@@ -51,7 +37,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
             flex: 1;
-            max-width: 100%;
+            max-width: 48%;
         }
 
         .left-panel h2 {
@@ -143,14 +129,33 @@
             <u>Example speech prompts</u><br><br>
             First Name <b>is</b> John<br>
             Last Name <b>is</b> Hoffman
-
-            <br><br><div class="bottom-link">
-                <a href="detailed.html">Show me the magic</a>
-            </div>
         </div>
 
-        
-        
+        <!-- Right Panel: Instruction Manual -->
+        <div class="right-panel">
+            <h3>How to Implement Speech Fill</h3>
+			<div class="step">
+                <span class="step-number">Step 1:</span>
+                <p class="step-description">Add bingo button at the bottom of your HTML. E.g.</p><Br>
+                <pre class="highlight">&lt;button id="bingoButton"&gt;Button&lt;/button&gt;</pre>
+            </div>
+			<div class="step">
+                <span class="step-number">Step 2:</span>
+                <p class="step-description">Add bingo style in HEAD section of your HTML. E.g.</p><Br>
+                <pre class="highlight">&lt;link rel="stylesheet" href="bingoButton.css"&gt;</pre>
+            </div>
+            <div class="step">
+                <span class="step-number">Step 3:</span>
+                <p class="step-description">Create and inject <span class="highlight">fieldMap.js</span> like below in your HTML file at the end preferred.</p><p class="note">[Make sure to read our instruction manual to understand how to create an easy field map.]</p><Br>
+                <pre class="highlight">&lt;script src="fieldMap.js"&gt;&lt;/script&gt;</pre>
+            </div>
+            <div class="step">
+                <span class="step-number">Step 4:</span>
+                <p class="step-description">Include the Bingo magic JavaScript file at the end preferred.</p><Br>
+                <pre class="highlight">&lt;script src="magic.js"&gt;&lt;/script&gt;</pre>
+            </div>
+            
+        </div>
     </div>
 
     <!-- Floating Bingo Button -->
